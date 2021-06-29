@@ -1,0 +1,74 @@
+doctype html
+html(lang='en')
+  head
+    title Hello, World!
+    //this is style link
+    link(rel="stylesheet" href="styles.css")
+    //this is internal styelsheet
+    style.
+      h1{
+        color:red;
+      }
+
+  body
+    h1 Hello, World!
+    //this is class
+    div.remark
+      //this is inline styel
+      p(style="color:green;font-size:25px;font-weight:800") Pug rocks!
+      p.ptag This is pTag..
+      //this is id 
+    div#remark2
+      h2 This is ul lists items
+      ul
+        li
+          a(href='/') Home
+        li
+          a(href='/about') About
+        li
+          a(href='/conatct') Conatct
+    div 
+      form
+        input(type="text" name="name" data-js=`${1 > 5 ? "ok" : "Not ok"}`)
+        //this is no.of class
+        -const difClass = ["class1","class2","class3"]
+        div(class=difClass)
+          p This is different class names
+          //this is internal styelsheet
+        -const myStyle={"color":"red","font-size":"25px"}
+          h2(style=myStyle) This is styles
+          //this is Attributes
+        -const myAttribute = {"src":"imag.png", "alt":"Image Not Display"}
+          img&attributes(myAttribute)
+
+          // for and each 
+    div
+      h2 for and each statement
+        -const grade = ["red","black","green"]
+        for n, i in grade
+          p= i + " - " + n
+        else
+          strong No Results..
+
+    //if condation
+    div
+      h2 This is if condation
+      -var user = {name:"jai", loggedIn:false, lastLogin:11}
+      if user.loggedIn
+        p 
+          | Welcome Back
+          strong #{user.name}
+      else if user.lastLogin < 10
+        p your last login was #{user.lastLogin} minutes ago
+        p
+          a(href='/home') Login agin
+      else
+        a(href='/login') Log In
+
+    //switch case statement
+
+//include files
+include about
+
+
+

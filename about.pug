@@ -1,0 +1,11 @@
+div 
+  -const orderStatus = 1
+    case orderStatus
+      when 1
+        p your order has been palced and will be shortly
+      when 2
+        p your order is on the move - you should recive soon!!
+      when 'completed'
+        p your order recived
+      default
+        p sorry your order cancelled!!
